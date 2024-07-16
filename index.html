@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="const firebaseConfig = {   apiKey: "YOUR_API_KEY",   authDomain: "YOUR_AUTH_DOMAIN",   projectId: "YOUR_PROJECT_ID",   storageBucket: "YOUR_STORAGE_BUCKET",   messagingSenderId: "YOUR_MESSAGING_SENDER_ID",   appId: "YOUR_APP_ID" };  // Initialize Fir">
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - ez utp test 2</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+    <title>EZ UTP Smart Parking</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <h1>EZ UTP</h1>
+            <input id="userInput" type="text" placeholder="Phone Number, Username, or Email" required>
+            <input id="password" type="password" placeholder="Password" required>
+            <button onclick="login()">Log In</button>
+            <p><a href="#" onclick="showForgotPassword()">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="#" onclick="showPage('register')">Sign Up</a></p>
+        </div>
+
+        <!-- Registration Page -->
+        <div id="register" class="page hidden">
+            <h1>EZ UTP User Registration</h1>
+            <input id="regEmail" type="text" placeholder="Email or Phone Number" required>
+            <input id="regFullName" type="text" placeholder="Full Name" required>
+            <input id="regUsername" type="text" placeholder="Username" required>
+            <input id="regPassword" type="password" placeholder="Password" required>
+            <input id="regCarPlate" type="text" placeholder="Car Plate" required>
+            <button onclick="register()">Sign Up</button>
+            <p>Have an account? <a href="#" onclick="showPage('home')">Log In</a></p>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboard" class="page hidden">
+            <h1>EZ UTP</h1>
+            <button onclick="showPage('chooseParking')">New Booking</button>
+            <button onclick="viewBooking()">View Booking</button>
+            <button onclick="cancelBooking()">Cancel Booking</button>
+        </div>
+
+        <!-- Choose Parking Page -->
+        <div id="chooseParking" class="page hidden">
+            <h1>Choose a Parking Block</h1>
+            <button onclick="showPage('blockD')">Block D</button>
+            <button onclick="showPage('blockC')">Block C</button>
+            <button onclick="showPage('mainHall')">Main Hall</button>
+            <button onclick="showPage('dashboard')">Back</button>
+        </div>
+
+        <!-- Block D Page -->
+        <div id="blockD" class="page hidden">
+            <h1>Block D Parking</h1>
+            <input id="parkingTimeD" type="time" required>
+            <div id="parkingSpotsD" class="parking-spots"></div>
+            <p id="timeAlertD" class="time-alert"></p>
+            <button onclick="confirmBooking('D')">Confirm Booking</button>
+            <button onclick="showPage('chooseParking')">Back</button>
+        </div>
+
+        <!-- Block C Page -->
+        <div id="blockC" class="page hidden">
+            <h1>Block C Parking</h1>
+            <input id="parkingTimeC" type="time" required>
+            <div id="parkingSpotsC" class="parking-spots"></div>
+            <p id="timeAlertC" class="time-alert"></p>
+            <button onclick="confirmBooking('C')">Confirm Booking</button>
+            <button onclick="showPage('chooseParking')">Back</button>
+        </div>
+
+        <!-- Main Hall Page -->
+        <div id="mainHall" class="page hidden">
+            <h1>Main Hall Parking</h1>
+            <input id="parkingTimeM" type="time" required>
+            <div id="parkingSpotsM" class="parking-spots"></div>
+            <p id="timeAlertM" class="time-alert"></p>
+            <button onclick="confirmBooking('M')">Confirm Booking</button>
+            <button onclick="showPage('chooseParking')">Back</button>
+        </div>
+
+        <!-- Details Page -->
+        <div id="details" class="page hidden">
+            <h1>Your Parking Details</h1>
+            <p>Parking Spot: <span id="selectedSpot">--</span></p>
+            <p>Please come within the time given, or your booking will be cancelled.</p>
+            <p>Your location: <span id="location">--</span></p>
+            <div id="map" style="height: 400px;"></div>
+            <button onclick="showPage('dashboard')">Back to Dashboard</button>
+        </div>
+
+        <!-- View Booking Page -->
+        <div id="viewBooking" class="page hidden">
+            <h1>Your Current Booking</h1>
+            <p>Parking Spot: <span id="currentSpot">--</span></p>
+            <p>Time: <span id="currentTime">--</span></p>
+            <p>Location: <span id="currentLocation">--</span></p>
+            <button onclick="showPage('dashboard')">Back to Dashboard</button>
+        </div>
+
+        <!-- Cancel Booking Page -->
+        <div id="cancelBooking" class="page hidden">
+            <h1>Cancel Booking</h1>
+            <p>Are you sure you want to cancel your booking?</p>
+            <button onclick="confirmCancellation()">Yes, Cancel</button>
+            <button onclick="showPage('dashboard')">No, Go Back</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+<!-- partial -->
+  <script src='https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js'></script>
+<script src='https://www.gstatic.com/firebasejs/9.6.3/firebase-auth.js'></script>
+<script src='https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

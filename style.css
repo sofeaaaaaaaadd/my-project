@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #4a90e2, #50e3c2);
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="time"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4a90e2;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+a {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.parking-spots {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.spot {
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.available {
+    background-color: green;
+}
+
+.reserved {
+    background-color: blue;
+}
+
+.unavailable {
+    background-color: red;
+}
+
+.selected {
+    border: 2px solid #fff;
+}
+
+.time-alert {
+    color: red;
+}
